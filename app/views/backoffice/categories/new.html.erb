@@ -1,0 +1,2 @@
+<%= render partial: "backoffice/categories/shared/form", locals: {action: "#{t('messages.new_a', model: @category.model_name.human(count: 1))}"} %>
+<!-- Como nosso formulário era igual tanto no NEW quanto no EDIT, passamos ele para uma partial e apenas renderizamos nas  páginas. utilizamos o (locals) para definir que quando estivermos renderizando pelo NEW a variável "action" lá na partial seja com o valor "Nova Categoria"-->
