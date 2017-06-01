@@ -55,9 +55,12 @@
             </div>
         </div>
         <!-- /#page-content-wrapper -->
-
     </div>
     <!-- /#wrapper -->
+
+    <% if notice %>
+      <%= javascript_tag "$.notify('#{notice}', 'success')" %>
+    <% end %>
 
 
 </body>

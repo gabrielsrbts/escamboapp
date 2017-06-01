@@ -1,5 +1,5 @@
 class Site::Profile::AdsController < Site::ProfileController
-  before_action :set_ad, only: [:edit]
+  before_action :set_ad, only: [:edit, :update]
 
 	def index
 		#@ads = current_member.ads
@@ -8,7 +8,16 @@ class Site::Profile::AdsController < Site::ProfileController
 	end
 
   def edit
+    @categories_for_select = Category.all
     #
+  end
+
+  def update
+    if @ad.update(params_ad)
+      redirect_to site_profile_ads_path, notice: "O anúncio (#{@ad.title}) foi atualizado com sucesso!"
+    else
+      render :edit
+    end
   end
 
 
@@ -17,5 +26,9 @@ class Site::Profile::AdsController < Site::ProfileController
 
   def set_ad
     @ad = Ad.find(params[:id])
+  end
+
+  def params_ad
+    params.require(:ad).permit(:id, :title, :description, :category_id, :picture, :price)
   end
 end
