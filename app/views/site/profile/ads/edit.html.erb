@@ -1,14 +1,14 @@
 <h1>Editando Anúncio</h1>
 
-<%= form_for([:site, :profile, @ad]) do |f|%>
+<%= form_for([:site, :profile, @ad], html: {multipart: true}) do |f|%>
   <div class="row">
-    <div class="form-group col-xs-7">
+    <div class="form-group col-xs-5">
       <label><%= f.label :title %></label>
       <%= f.text_field :title, class: "form-control" %>
     </div>
   </div>
   <div class="row">
-    <div class="form-group col-xs-4">
+    <div class="form-group col-xs-3">
       <%= f.label 'Categoria' %>
       <%= f.collection_select :category_id, @categories_for_select, :id, :description, {}, {class: "form-control"} %>
     </div>
@@ -22,7 +22,7 @@
         </div>
       </div>
   </div>
-  <div class="row">  
+  <div class="row">
     <div class="form-group col-xs-7">
       <%= f.label :picture %><br>
       <%= image_tag @ad.picture.url(:medium), class: "img-thumbnail" %>
@@ -36,7 +36,7 @@
     </div>
   </div>
 
-  <%= submit_tag t('buttons.update'), class: "btn btn-primary"%>
+  <%= submit_tag t('buttons.save'), class: "btn btn-primary"%>
 
 <% end %>
 
