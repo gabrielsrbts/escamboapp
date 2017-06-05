@@ -12,4 +12,5 @@
     send_message: Enviar Mensagem
     search: Pesquisar
     login: Entrar
-    update: Atualizar 
+    update: Atualizar
+    create: Criar

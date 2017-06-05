@@ -10670,3 +10670,2318 @@ Processing by Site::Profile::AdsController#index as HTML
   Rendered site/profile/ads/index.html.erb within layouts/profile (4.8ms)
   Rendered layouts/site_shared/_navigation.html.erb (0.6ms)
 Completed 200 OK in 439ms (Views: 435.1ms | ActiveRecord: 2.4ms)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+
+
+Started GET "/" for 10.0.2.2 at 2017-06-05 22:07:35 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Site::HomeController#index as HTML
+  [1m[35mCategory Load (2.8ms)[0m  SELECT "categories".* FROM "categories"  ORDER BY "categories"."description" ASC
+  [1m[36mAd Load (23.3ms)[0m  [1mSELECT  "ads".* FROM "ads"  ORDER BY "ads"."created_at" DESC LIMIT 6[0m
+  Rendered site/home/index.html.erb within layouts/site (1938.8ms)
+  Rendered layouts/site_shared/_navigation.html.erb (11.2ms)
+  Rendered layouts/site_shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 5085ms (Views: 4911.6ms | ActiveRecord: 29.0ms)
+
+
+Started GET "/assets/application.self-e3aeec5fd5935b99828fb8f43ec8a1afd3aad7f84cc15ac5eafc65b5ad8ef866.css?body=1" for 10.0.2.2 at 2017-06-05 22:07:40 +0000
+
+
+Started GET "/assets/bootstrap.self-7ff12e8f5a0d1005c4a140924426d309c6a24dcc33e108c24a0771faaebe11ae.css?body=1" for 10.0.2.2 at 2017-06-05 22:07:40 +0000
+
+
+Started GET "/assets/site.self-e4d6791de3603b91cb9a5bc220efc7f0d25f04ca75b183dd38668796788bdc64.css?body=1" for 10.0.2.2 at 2017-06-05 22:07:41 +0000
+
+
+Started GET "/assets/application.self-89655ea40500a342dad2ac571974c28abab3e3897c63fef4c2d06d7564836879.js?body=1" for 10.0.2.2 at 2017-06-05 22:07:41 +0000
+
+
+Started GET "/assets/site.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 10.0.2.2 at 2017-06-05 22:07:41 +0000
+
+
+Started GET "/assets/bootstrap/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for 10.0.2.2 at 2017-06-05 22:07:41 +0000
+
+
+Started GET "/assets/bootstrap.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 10.0.2.2 at 2017-06-05 22:07:41 +0000
+
+
+Started GET "/assets/bootstrap/dist/fonts/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for 10.0.2.2 at 2017-06-05 22:07:42 +0000
+
+
+Started GET "/members/sign_in" for 10.0.2.2 at 2017-06-05 22:07:44 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendered members/shared/_links.html.erb (19.9ms)
+  Rendered members/sessions/new.html.erb within layouts/application (254.0ms)
+Completed 200 OK in 475ms (Views: 447.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/members/sign_in" for 10.0.2.2 at 2017-06-05 22:07:47 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"soskHcwHnLhkPcv2OYAZ+j+WHWIaBLvoSI617KxgnUirTZyctJ/kJ9R33YpcrY7SVrrkQWdQJ9zF5+zP7sl52w==", "member"=>{"email"=>"member@member.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mMember Load (3.9ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."email" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["email", "member@member.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (6.5ms)[0m  UPDATE "members" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "members"."id" = ?  [["last_sign_in_at", "2017-05-29 23:03:40.945746"], ["current_sign_in_at", "2017-06-05 22:07:48.205916"], ["sign_in_count", 3], ["updated_at", "2017-06-05 22:07:48.210013"], ["id", 1]]
+  [1m[36m (9.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 637ms (ActiveRecord: 20.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-06-05 22:07:48 +0000
+Processing by Site::HomeController#index as HTML
+  [1m[35mCategory Load (6.7ms)[0m  SELECT "categories".* FROM "categories"  ORDER BY "categories"."description" ASC
+  [1m[36mAd Load (3.7ms)[0m  [1mSELECT  "ads".* FROM "ads"  ORDER BY "ads"."created_at" DESC LIMIT 6[0m
+  Rendered site/home/index.html.erb within layouts/site (23.0ms)
+  [1m[35mMember Load (2.4ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (8.2ms)
+  Rendered layouts/site_shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 445ms (Views: 430.8ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/site/profile/dashboard" for 10.0.2.2 at 2017-06-05 22:07:51 +0000
+Processing by Site::Profile::DashboardController#index as HTML
+  Rendered site/profile/dashboard/index.html.erb within layouts/profile (0.6ms)
+  [1m[36mMember Load (2.3ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (7.6ms)
+Completed 200 OK in 509ms (Views: 506.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/site/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 10.0.2.2 at 2017-06-05 22:07:51 +0000
+
+
+Started GET "/assets/site/profile.self-f5a34f30e703d348ed7b953ee2095012fb1454d851d4af458ee936b3dd4e6e1c.css?body=1" for 10.0.2.2 at 2017-06-05 22:07:52 +0000
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:07:54 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[35mMember Load (2.3ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAd Load (3.2ms)[0m  [1mSELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1[0m
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (2.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mCategory Load (2.3ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCategory Load (2.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (3.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (171.2ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.6ms)
+Completed 200 OK in 616ms (Views: 593.0ms | ActiveRecord: 19.6ms)
+
+
+Started GET "/site/profile/ads/100/edit" for 10.0.2.2 at 2017-06-05 22:08:00 +0000
+Processing by Site::Profile::AdsController#edit as HTML
+  Parameters: {"id"=>"100"}
+  [1m[36mAd Load (2.3ms)[0m  [1mSELECT  "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1[0m  [["id", 100]]
+  [1m[35mCategory Load (2.2ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/profile/ads/edit.html.erb within layouts/profile (60.1ms)
+  [1m[36mMember Load (2.5ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (8.6ms)
+Completed 200 OK in 516ms (Views: 505.5ms | ActiveRecord: 7.0ms)
+
+
+Started PATCH "/site/profile/ads/100" for 10.0.2.2 at 2017-06-05 22:08:12 +0000
+Processing by Site::Profile::AdsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wfiBZprSfrnTn58A4iTq1tpySH0alsq+T8zp3BFzEHgqZW2f+gMsMULd3h4XVokYvi/8GlKoQbr6PxeTLH9dqg==", "ad"=>{"title"=>"Neque commodi consequatur ut fuga.", "category_id"=>"7", "price"=>"194,61", "description"=>"Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum."}, "commit"=>"Salvar", "id"=>"100"}
+  [1m[35mAd Load (2.3ms)[0m  SELECT  "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1  [["id", 100]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (6.5ms)[0m  UPDATE "ads" SET "category_id" = ?, "updated_at" = ? WHERE "ads"."id" = ?  [["category_id", 7], ["updated_at", "2017-06-05 22:08:12.360953"], ["id", 100]]
+  [1m[36m (13.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/site/profile/ads
+Completed 302 Found in 41ms (ActiveRecord: 22.4ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:08:12 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[35mMember Load (7.3ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAd Load (2.5ms)[0m  [1mSELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1[0m
+  [1m[35mCategory Load (2.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (2.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (2.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (2.6ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (3.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (36.8ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 480ms (Views: 454.5ms | ActiveRecord: 21.7ms)
+
+
+Started GET "/site/profile/dashboard" for 10.0.2.2 at 2017-06-05 22:10:06 +0000
+Processing by Site::Profile::DashboardController#index as HTML
+  Rendered site/profile/dashboard/index.html.erb within layouts/profile (0.1ms)
+  [1m[36mMember Load (2.4ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (6.8ms)
+Completed 200 OK in 449ms (Views: 445.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/rails/info/routes" for 10.0.2.2 at 2017-06-05 22:14:06 +0000
+Processing by Rails::InfoController#routes as HTML
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (21.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/railties-4.2.5/lib/rails/templates/rails/info/routes.html.erb within layouts/application (54.4ms)
+Completed 200 OK in 70ms (Views: 69.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes" for 10.0.2.2 at 2017-06-05 22:15:22 +0000
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+Processing by Rails::InfoController#routes as HTML
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/railties-4.2.5/lib/rails/templates/rails/info/routes.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/site/profile/dashboard" for 10.0.2.2 at 2017-06-05 22:16:30 +0000
+Processing by Site::Profile::DashboardController#index as HTML
+  Rendered site/profile/dashboard/index.html.erb within layouts/profile (0.1ms)
+  [1m[35mMember Load (2.8ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (24.1ms)
+Completed 200 OK in 472ms (Views: 463.0ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 22:16:33 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  Rendered site/profile/ads/new.html.erb within layouts/profile (0.6ms)
+  [1m[36mMember Load (2.7ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (6.1ms)
+Completed 200 OK in 470ms (Views: 466.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 22:19:12 +0000
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+Processing by Site::Profile::AdsController#new as HTML
+  Rendered site/profile/ads/new.html.erb within layouts/profile (56.0ms)
+Completed 500 Internal Server Error in 242ms (ActiveRecord: 6.2ms)
+
+NoMethodError - undefined method `map' for nil:NilClass
+Did you mean?  tap:
+  actionview (4.2.5) lib/action_view/helpers/form_options_helper.rb:394:in `options_from_collection_for_select'
+  actionview (4.2.5) lib/action_view/helpers/tags/collection_select.rb:21:in `render'
+  actionview (4.2.5) lib/action_view/helpers/form_options_helper.rb:202:in `collection_select'
+  actionview (4.2.5) lib/action_view/helpers/form_options_helper.rb:789:in `collection_select'
+  app/views/site/profile/ads/new.html.erb:13:in `block in _app_views_site_profile_ads_new_html_erb___957592725_119244900'
+  actionview (4.2.5) lib/action_view/helpers/capture_helper.rb:38:in `block in capture'
+  actionview (4.2.5) lib/action_view/helpers/capture_helper.rb:202:in `with_output_buffer'
+  actionview (4.2.5) lib/action_view/helpers/capture_helper.rb:38:in `capture'
+  actionview (4.2.5) lib/action_view/helpers/form_helper.rb:444:in `form_for'
+  app/views/site/profile/ads/new.html.erb:3:in `_app_views_site_profile_ads_new_html_erb___957592725_119244900'
+  actionview (4.2.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.5) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.5) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.5) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/vagrant/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (1.6.5) lib/rack/etag.rb:24:in `call'
+  rack (1.6.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.5) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.6.5) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.5) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `<main>'
+
+
+
+Started POST "/__better_errors/1a274b0cf75da492/variables" for 10.0.2.2 at 2017-06-05 22:19:13 +0000
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 22:19:45 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  Rendered site/profile/ads/new.html.erb within layouts/profile (53.8ms)
+Completed 500 Internal Server Error in 136ms (ActiveRecord: 0.0ms)
+
+NoMethodError - undefined method `map' for nil:NilClass
+Did you mean?  tap:
+  actionview (4.2.5) lib/action_view/helpers/form_options_helper.rb:394:in `options_from_collection_for_select'
+  actionview (4.2.5) lib/action_view/helpers/tags/collection_select.rb:21:in `render'
+  actionview (4.2.5) lib/action_view/helpers/form_options_helper.rb:202:in `collection_select'
+  actionview (4.2.5) lib/action_view/helpers/form_options_helper.rb:789:in `collection_select'
+  app/views/site/profile/ads/new.html.erb:13:in `block in _app_views_site_profile_ads_new_html_erb___957592725_118341280'
+  actionview (4.2.5) lib/action_view/helpers/capture_helper.rb:38:in `block in capture'
+  actionview (4.2.5) lib/action_view/helpers/capture_helper.rb:202:in `with_output_buffer'
+  actionview (4.2.5) lib/action_view/helpers/capture_helper.rb:38:in `capture'
+  actionview (4.2.5) lib/action_view/helpers/form_helper.rb:444:in `form_for'
+  app/views/site/profile/ads/new.html.erb:3:in `_app_views_site_profile_ads_new_html_erb___957592725_118341280'
+  actionview (4.2.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.5) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.5) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.5) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/vagrant/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (1.6.5) lib/rack/etag.rb:24:in `call'
+  rack (1.6.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.5) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.6.5) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.5) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `<main>'
+
+
+
+Started POST "/__better_errors/01a2bd8d42aa4aa4/variables" for 10.0.2.2 at 2017-06-05 22:19:46 +0000
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 22:19:55 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  Rendered site/profile/ads/new.html.erb within layouts/profile (59.8ms)
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 0.0ms)
+
+ArgumentError - wrong number of arguments (given 3, expected 4..6):
+  actionview (4.2.5) lib/action_view/helpers/form_options_helper.rb:788:in `collection_select'
+  app/views/site/profile/ads/new.html.erb:13:in `block in _app_views_site_profile_ads_new_html_erb___957592725_116324860'
+  actionview (4.2.5) lib/action_view/helpers/capture_helper.rb:38:in `block in capture'
+  actionview (4.2.5) lib/action_view/helpers/capture_helper.rb:202:in `with_output_buffer'
+  actionview (4.2.5) lib/action_view/helpers/capture_helper.rb:38:in `capture'
+  actionview (4.2.5) lib/action_view/helpers/form_helper.rb:444:in `form_for'
+  app/views/site/profile/ads/new.html.erb:3:in `_app_views_site_profile_ads_new_html_erb___957592725_116324860'
+  actionview (4.2.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.5) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.5) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.5) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/vagrant/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (1.6.5) lib/rack/etag.rb:24:in `call'
+  rack (1.6.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.5) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.6.5) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.5) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+
+Started POST "/__better_errors/a71e460445a9d3eb/variables" for 10.0.2.2 at 2017-06-05 22:19:55 +0000
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 22:22:49 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[35mAd Load (20.7ms)[0m  SELECT "ads".* FROM "ads"
+  Rendered site/profile/ads/new.html.erb within layouts/profile (42.4ms)
+  [1m[36mMember Load (3.2ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (16.8ms)
+Completed 200 OK in 492ms (Views: 467.3ms | ActiveRecord: 24.1ms)
+
+
+Started GET "/images/medium/missing.png" for 10.0.2.2 at 2017-06-05 22:22:49 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.6.5) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.5) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (97.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (61.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (135.2ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 22:23:11 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[35mCategory Load (3.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/profile/ads/new.html.erb within layouts/profile (70.8ms)
+  [1m[36mMember Load (2.6ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (5.4ms)
+Completed 200 OK in 556ms (Views: 548.5ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/images/medium/missing.png" for 10.0.2.2 at 2017-06-05 22:23:12 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.6.5) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.5) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (66.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (86.6ms)
+
+
+Started POST "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:24:05 +0000
+
+ActionController::RoutingError (No route matches [POST] "/site/profile/ads"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.6.5) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.5) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (67.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (41.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (87.2ms)
+
+
+Started GET "/images/medium/missing.png" for 10.0.2.2 at 2017-06-05 22:27:04 +0000
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.6.5) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.5) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (20.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (93.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (87.5ms)
+
+
+Started POST "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:27:08 +0000
+
+ActionController::RoutingError (No route matches [POST] "/site/profile/ads"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.6.5) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.5) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (65.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (87.1ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:27:14 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[35mMember Load (2.7ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAd Load (4.4ms)[0m  [1mSELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1[0m
+  [1m[35mCategory Load (2.4ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (2.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (2.3ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (2.3ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (2.4ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (105.6ms)
+  Rendered layouts/site_shared/_navigation.html.erb (1.4ms)
+Completed 200 OK in 649ms (Views: 538.9ms | ActiveRecord: 24.8ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 22:27:21 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[36mCategory Load (3.0ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/profile/ads/new.html.erb within layouts/profile (13.2ms)
+  [1m[35mMember Load (2.2ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (5.9ms)
+Completed 200 OK in 481ms (Views: 474.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/images/medium/missing.png" for 10.0.2.2 at 2017-06-05 22:27:22 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.6.5) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.5) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (64.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (44.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (93.8ms)
+
+
+Started POST "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:27:40 +0000
+
+ActionController::RoutingError (No route matches [POST] "/site/profile/ads"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.6.5) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.5) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (72.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (38.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (84.4ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:29:16 +0000
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[36mMember Load (2.6ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAd Load (4.1ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1
+  [1m[36mCategory Load (2.4ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (2.9ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (2.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (2.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (3.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (104.4ms)
+  Rendered layouts/site_shared/_navigation.html.erb (1.5ms)
+Completed 200 OK in 658ms (Views: 547.2ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:29:22 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[35mMember Load (2.3ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAd Load (2.3ms)[0m  [1mSELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1[0m
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (2.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (2.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (3.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (2.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (40.1ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.6ms)
+Completed 200 OK in 501ms (Views: 480.2ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 22:29:26 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[36mCategory Load (2.8ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/profile/ads/new.html.erb within layouts/profile (12.9ms)
+  [1m[35mMember Load (2.7ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (6.4ms)
+Completed 200 OK in 459ms (Views: 452.0ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/images/medium/missing.png" for 10.0.2.2 at 2017-06-05 22:29:27 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.6.5) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.5) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (62.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (2.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (90.0ms)
+
+
+Started POST "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:29:45 +0000
+Processing by Site::Profile::AdsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uu6YlqHlep1bUEib7k6bygMPoWNmFaU/AN+/HKqnLhhRc3RvwTQoFcoSCYUbPPgEZ1IVBC4rLju1LEFTl6tjyg==", "ad"=>{"title"=>"Teste", "category_id"=>"2", "price"=>"222,22", "picture"=>#<ActionDispatch::Http::UploadedFile:0xd8079a8 @tempfile=#<Tempfile:/tmp/RackMultipart20170605-2398-ut5drf.jpg>, @original_filename="umbrella_thorn_acacia_tree-wallpaper-1920x1080.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"ad[picture]\"; filename=\"umbrella_thorn_acacia_tree-wallpaper-1920x1080.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"dsadasdasda"}, "commit"=>"Salvar"}
+Command :: file -b --mime '/tmp/f03cd5b877c5f2bf772f44ac2d43a3af20170605-2398-1up4htq.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/f03cd5b877c5f2bf772f44ac2d43a3af20170605-2398-1bn4x3i.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/f03cd5b877c5f2bf772f44ac2d43a3af20170605-2398-1bn4x3i.jpg[0]'
+Command :: convert '/tmp/f03cd5b877c5f2bf772f44ac2d43a3af20170605-2398-1bn4x3i.jpg[0]' -auto-orient -resize "320x" -crop "320x150+0+15" +repage '/tmp/9b2c4338d14ab3067af915e12776ba1e20170605-2398-1jkwub5'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/f03cd5b877c5f2bf772f44ac2d43a3af20170605-2398-1bn4x3i.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/f03cd5b877c5f2bf772f44ac2d43a3af20170605-2398-1bn4x3i.jpg[0]'
+Command :: convert '/tmp/f03cd5b877c5f2bf772f44ac2d43a3af20170605-2398-1bn4x3i.jpg[0]' -auto-orient -resize "100x100>" '/tmp/9b2c4338d14ab3067af915e12776ba1e20170605-2398-1lai5g6'
+Completed 500 Internal Server Error in 1748ms (ActiveRecord: 0.0ms)
+
+NoMethodError - undefined method `save?' for #<Ad:0xd804294>
+Did you mean?  save
+               save!:
+  activemodel (4.2.5) lib/active_model/attribute_methods.rb:433:in `method_missing'
+  app/controllers/site/profile/ads_controller.rb:30:in `create'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (1.6.5) lib/rack/etag.rb:24:in `call'
+  rack (1.6.5) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.5) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.6.5) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.5) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `<main>'
+
+
+
+Started POST "/__better_errors/bc5a81926565d041/variables" for 10.0.2.2 at 2017-06-05 22:29:47 +0000
+
+
+Started GET "/images/medium/missing.png" for 10.0.2.2 at 2017-06-05 22:30:22 +0000
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.6.5) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.5) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (78.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (40.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (84.1ms)
+
+
+Started POST "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:30:24 +0000
+Processing by Site::Profile::AdsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uu6YlqHlep1bUEib7k6bygMPoWNmFaU/AN+/HKqnLhhRc3RvwTQoFcoSCYUbPPgEZ1IVBC4rLju1LEFTl6tjyg==", "ad"=>{"title"=>"Teste", "category_id"=>"2", "price"=>"222,22", "picture"=>#<ActionDispatch::Http::UploadedFile:0xcef5c84 @tempfile=#<Tempfile:/tmp/RackMultipart20170605-2398-1setfv4.jpg>, @original_filename="umbrella_thorn_acacia_tree-wallpaper-1920x1080.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"ad[picture]\"; filename=\"umbrella_thorn_acacia_tree-wallpaper-1920x1080.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"dsadasdasda"}, "commit"=>"Salvar"}
+Command :: file -b --mime '/tmp/f03cd5b877c5f2bf772f44ac2d43a3af20170605-2398-1hb0ft7.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/f03cd5b877c5f2bf772f44ac2d43a3af20170605-2398-17u1uu7.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/f03cd5b877c5f2bf772f44ac2d43a3af20170605-2398-17u1uu7.jpg[0]'
+Command :: convert '/tmp/f03cd5b877c5f2bf772f44ac2d43a3af20170605-2398-17u1uu7.jpg[0]' -auto-orient -resize "320x" -crop "320x150+0+15" +repage '/tmp/3bbd2d0dcbab0e0f71a717f48e28394120170605-2398-1mn3a9y'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/f03cd5b877c5f2bf772f44ac2d43a3af20170605-2398-17u1uu7.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/f03cd5b877c5f2bf772f44ac2d43a3af20170605-2398-17u1uu7.jpg[0]'
+Command :: convert '/tmp/f03cd5b877c5f2bf772f44ac2d43a3af20170605-2398-17u1uu7.jpg[0]' -auto-orient -resize "100x100>" '/tmp/3bbd2d0dcbab0e0f71a717f48e28394120170605-2398-1yt4jiv'
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/tmp/f03cd5b877c5f2bf772f44ac2d43a3af20170605-2398-1shkyhz.jpg'
+  [1m[35mSQL (8.3ms)[0m  INSERT INTO "ads" ("title", "description", "category_id", "picture_file_name", "picture_content_type", "picture_file_size", "picture_updated_at", "price_cents", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Teste"], ["description", "dsadasdasda"], ["category_id", 2], ["picture_file_name", "umbrella_thorn_acacia_tree-wallpaper-1920x1080.jpg"], ["picture_content_type", "image/jpeg"], ["picture_file_size", 673309], ["picture_updated_at", "2017-06-05 22:30:24.681683"], ["price_cents", 22222], ["created_at", "2017-06-05 22:30:26.175421"], ["updated_at", "2017-06-05 22:30:26.175421"]]
+  [1m[36m (10.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/site/profile/ads
+Completed 302 Found in 1816ms (ActiveRecord: 24.9ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:30:26 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[35mMember Load (7.4ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAd Load (4.2ms)[0m  [1mSELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1[0m
+  [1m[35mCategory Load (2.4ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (2.4ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (2.5ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (2.3ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (106.6ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.8ms)
+Completed 200 OK in 554ms (Views: 515.9ms | ActiveRecord: 24.3ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:31:39 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[36mMember Load (2.2ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAd Load (2.9ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1
+  [1m[36mCategory Load (2.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (2.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (2.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (2.4ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (2.7ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (37.0ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.6ms)
+Completed 200 OK in 485ms (Views: 464.0ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 22:31:43 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[35mCategory Load (2.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/profile/ads/new.html.erb within layouts/profile (12.4ms)
+  [1m[36mMember Load (2.3ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (5.4ms)
+Completed 200 OK in 461ms (Views: 455.2ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/images/medium/missing.png" for 10.0.2.2 at 2017-06-05 22:31:44 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.6.5) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.5) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (63.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (40.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (86.7ms)
+
+
+Started POST "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:31:56 +0000
+Processing by Site::Profile::AdsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yAVwM8RvzJZMdbCQAHJxC1gRKuTrFSeUC2yh+RotyDcjmJzKpL6eHt038Y71ABLFPEyeg6MrrJC+n1+2JyGF5Q==", "ad"=>{"title"=>"Teste", "category_id"=>"1", "price"=>"2", "picture"=>#<ActionDispatch::Http::UploadedFile:0xd4cf5c4 @tempfile=#<Tempfile:/tmp/RackMultipart20170605-2398-o0ycw2.jpg>, @original_filename="aldeyjarfoss_waterfall_iceland_winter-wallpaper-1920x1080.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"ad[picture]\"; filename=\"aldeyjarfoss_waterfall_iceland_winter-wallpaper-1920x1080.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"teste"}, "commit"=>"Salvar"}
+Command :: file -b --mime '/tmp/ce3bae5e00cb7c195b36b366db0d27af20170605-2398-1wbseet.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/ce3bae5e00cb7c195b36b366db0d27af20170605-2398-1dpek9x.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/ce3bae5e00cb7c195b36b366db0d27af20170605-2398-1dpek9x.jpg[0]'
+Command :: convert '/tmp/ce3bae5e00cb7c195b36b366db0d27af20170605-2398-1dpek9x.jpg[0]' -auto-orient -resize "320x" -crop "320x150+0+15" +repage '/tmp/f3c304eaf6a6308037833f4178fc700f20170605-2398-ae755z'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/ce3bae5e00cb7c195b36b366db0d27af20170605-2398-1dpek9x.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/ce3bae5e00cb7c195b36b366db0d27af20170605-2398-1dpek9x.jpg[0]'
+Command :: convert '/tmp/ce3bae5e00cb7c195b36b366db0d27af20170605-2398-1dpek9x.jpg[0]' -auto-orient -resize "100x100>" '/tmp/f3c304eaf6a6308037833f4178fc700f20170605-2398-1ddz98k'
+  [1m[35m (0.3ms)[0m  begin transaction
+Command :: file -b --mime '/tmp/ce3bae5e00cb7c195b36b366db0d27af20170605-2398-jufzgi.jpg'
+  [1m[36mSQL (8.1ms)[0m  [1mINSERT INTO "ads" ("title", "description", "category_id", "picture_file_name", "picture_content_type", "picture_file_size", "picture_updated_at", "price_cents", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Teste"], ["description", "teste"], ["category_id", 1], ["picture_file_name", "aldeyjarfoss_waterfall_iceland_winter-wallpaper-1920x1080.jpg"], ["picture_content_type", "image/jpeg"], ["picture_file_size", 980794], ["picture_updated_at", "2017-06-05 22:31:56.957700"], ["price_cents", 200], ["created_at", "2017-06-05 22:31:58.432388"], ["updated_at", "2017-06-05 22:31:58.432388"]]
+  [1m[35m (11.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/site/profile/ads
+Completed 302 Found in 1717ms (ActiveRecord: 20.2ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:31:58 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[36mMember Load (7.7ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAd Load (2.4ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1
+  [1m[36mCategory Load (2.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (2.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (2.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (2.6ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (40.5ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.9ms)
+Completed 200 OK in 477ms (Views: 452.4ms | ActiveRecord: 21.1ms)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+  [1m[36mAd Load (2.9ms)[0m  [1mSELECT  "ads".* FROM "ads"  ORDER BY "ads"."id" DESC LIMIT 1[0m
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+
+
+Started GET "/" for 10.0.2.2 at 2017-06-05 22:34:03 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Site::HomeController#index as HTML
+  [1m[35mCategory Load (2.9ms)[0m  SELECT "categories".* FROM "categories"  ORDER BY "categories"."description" ASC
+  [1m[36mAd Load (21.9ms)[0m  [1mSELECT  "ads".* FROM "ads"  ORDER BY "ads"."created_at" DESC LIMIT 6[0m
+  Rendered site/home/index.html.erb within layouts/site (1432.8ms)
+  [1m[35mMember Load (3.4ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (109.3ms)
+  Rendered layouts/site_shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 4357ms (Views: 4203.7ms | ActiveRecord: 31.2ms)
+
+
+Started GET "/members/edit.1" for 10.0.2.2 at 2017-06-05 22:34:16 +0000
+Processing by Devise::RegistrationsController#edit as 
+  [1m[36mMember Load (2.4ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered members/registrations/edit.html.erb within layouts/application (123.5ms)
+Completed 200 OK in 699ms (Views: 692.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/site/profile/dashboard" for 10.0.2.2 at 2017-06-05 22:34:22 +0000
+Processing by Site::Profile::DashboardController#index as HTML
+  Rendered site/profile/dashboard/index.html.erb within layouts/profile (1.3ms)
+  [1m[35mMember Load (2.4ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (6.7ms)
+Completed 200 OK in 557ms (Views: 554.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:34:24 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[36mMember Load (2.5ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAd Load (3.1ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1
+  [1m[36mCategory Load (2.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (2.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (2.9ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (3.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (138.5ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.8ms)
+Completed 200 OK in 582ms (Views: 559.6ms | ActiveRecord: 18.2ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:35:00 +0000
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[35mAd Load (23.3ms)[0m  SELECT "ads".* FROM "ads"
+  [1m[36mCategory Load (2.9ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mCategory Load (2.5ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCategory Load (2.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCategory Load (2.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mCategory Load (2.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCategory Load (3.4ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCategory Load (2.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (3.9ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (442.4ms)
+  [1m[35mMember Load (2.8ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (18.5ms)
+Completed 200 OK in 973ms (Views: 843.7ms | ActiveRecord: 58.2ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:35:39 +0000
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[36mMember Load (2.8ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAd Load (4.9ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1
+  [1m[36mCategory Load (2.9ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (2.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (2.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (3.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (107.8ms)
+  Rendered layouts/site_shared/_navigation.html.erb (1.2ms)
+Completed 200 OK in 678ms (Views: 559.1ms | ActiveRecord: 26.5ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:37:17 +0000
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[35mMember Load (2.8ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAd Load (4.2ms)[0m  [1mSELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1[0m
+  [1m[35mCategory Load (2.4ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (2.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (2.3ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (3.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (113.0ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.6ms)
+Completed 200 OK in 658ms (Views: 546.2ms | ActiveRecord: 26.3ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 22:37:22 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[36mCategory Load (2.6ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/profile/ads/new.html.erb within layouts/profile (126.9ms)
+Completed 500 Internal Server Error in 228ms (ActiveRecord: 2.6ms)
+
+NoMethodError - undefined method `picture' for #<ActionView::Helpers::FormBuilder:0xdd1277c>
+Did you mean?  capture:
+  app/views/site/profile/ads/new.html.erb:28:in `block in _app_views_site_profile_ads_new_html_erb___394326108_125022250'
+  actionview (4.2.5) lib/action_view/helpers/capture_helper.rb:38:in `block in capture'
+  actionview (4.2.5) lib/action_view/helpers/capture_helper.rb:202:in `with_output_buffer'
+  actionview (4.2.5) lib/action_view/helpers/capture_helper.rb:38:in `capture'
+  actionview (4.2.5) lib/action_view/helpers/form_helper.rb:444:in `form_for'
+  app/views/site/profile/ads/new.html.erb:3:in `_app_views_site_profile_ads_new_html_erb___394326108_125022250'
+  actionview (4.2.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.5) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.5) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.5) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/vagrant/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (1.6.5) lib/rack/etag.rb:24:in `call'
+  rack (1.6.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.5) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.5) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.6.5) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.5) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `<main>'
+
+
+
+Started POST "/__better_errors/ca14e707e25359f4/variables" for 10.0.2.2 at 2017-06-05 22:37:22 +0000
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 22:37:31 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[35mCategory Load (3.8ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/profile/ads/new.html.erb within layouts/profile (40.7ms)
+  [1m[36mMember Load (2.4ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (6.4ms)
+Completed 200 OK in 554ms (Views: 547.5ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/images/medium/missing.png" for 10.0.2.2 at 2017-06-05 22:37:32 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.6.5) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.5) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.1ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (13.9ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (85.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (89.8ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:37:39 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[35mMember Load (2.4ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAd Load (3.1ms)[0m  [1mSELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1[0m
+  [1m[35mCategory Load (2.3ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (2.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (2.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (3.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (41.2ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.7ms)
+Completed 200 OK in 481ms (Views: 459.7ms | ActiveRecord: 17.2ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 22:42:48 +0000
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[36mCategory Load (2.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/profile/ads/new.html.erb within layouts/profile (1420.4ms)
+  [1m[35mMember Load (3.2ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (18.6ms)
+Completed 200 OK in 2000ms (Views: 1903.2ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/images/medium/missing.png" for 10.0.2.2 at 2017-06-05 22:42:51 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  thin (1.5.1) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.1) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.1) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.1) lib/thin/connection.rb:54:in `process'
+  thin (1.5.1) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.5.1) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.1) lib/thin/server.rb:159:in `start'
+  rack (1.6.5) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.5) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:4:in `require'
+  bin/rails:4:in `<main>'
+
+
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.5ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (79.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (45.2ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /home/vagrant/.rvm/gems/ruby-2.3.3/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (98.6ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 22:48:20 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[36mCategory Load (2.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/profile/ads/new.html.erb within layouts/profile (12.3ms)
+  [1m[35mMember Load (2.1ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (5.5ms)
+Completed 200 OK in 456ms (Views: 450.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 22:50:40 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[36mCategory Load (2.6ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/profile/ads/new.html.erb within layouts/profile (13.1ms)
+  [1m[35mMember Load (2.2ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (5.7ms)
+Completed 200 OK in 456ms (Views: 450.0ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:53:41 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[36mMember Load (2.3ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAd Load (4.1ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1
+  [1m[36mCategory Load (2.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (3.6ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (2.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (2.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (2.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (61.3ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.7ms)
+Completed 200 OK in 517ms (Views: 493.9ms | ActiveRecord: 18.5ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 22:53:44 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[35mCategory Load (2.8ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/profile/ads/shared/_form.html.erb (12.8ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (70.0ms)
+  [1m[36mMember Load (2.2ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (5.7ms)
+Completed 200 OK in 520ms (Views: 514.2ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 22:54:16 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[35mCategory Load (2.7ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/profile/ads/shared/_form.html.erb (9.9ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (62.6ms)
+  [1m[36mMember Load (2.2ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (6.4ms)
+Completed 200 OK in 499ms (Views: 493.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 22:54:18 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[35mMember Load (3.1ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAd Load (2.5ms)[0m  [1mSELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1[0m
+  [1m[35mCategory Load (2.4ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCategory Load (2.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (2.5ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (2.7ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (2.5ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (43.1ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.9ms)
+Completed 200 OK in 525ms (Views: 502.1ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/site/profile/ads/59/edit" for 10.0.2.2 at 2017-06-05 22:54:19 +0000
+Processing by Site::Profile::AdsController#edit as HTML
+  Parameters: {"id"=>"59"}
+  [1m[36mAd Load (3.2ms)[0m  [1mSELECT  "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1[0m  [["id", 59]]
+  [1m[35mCategory Load (3.1ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/profile/ads/shared/_form.html.erb (12.9ms)
+  Rendered site/profile/ads/edit.html.erb within layouts/profile (72.0ms)
+  [1m[36mMember Load (2.2ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (6.0ms)
+Completed 200 OK in 550ms (Views: 537.0ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/site/profile/ads/59/edit" for 10.0.2.2 at 2017-06-05 22:55:25 +0000
+Processing by Site::Profile::AdsController#edit as HTML
+  Parameters: {"id"=>"59"}
+  [1m[35mAd Load (2.7ms)[0m  SELECT  "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1  [["id", 59]]
+  [1m[36mCategory Load (2.8ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/profile/ads/shared/_form.html.erb (15.6ms)
+  Rendered site/profile/ads/edit.html.erb within layouts/profile (74.9ms)
+  [1m[35mMember Load (2.4ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (6.0ms)
+Completed 200 OK in 565ms (Views: 554.1ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 22:55:29 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[36mCategory Load (2.8ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/profile/ads/shared/_form.html.erb (12.1ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (72.0ms)
+  [1m[35mMember Load (2.1ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (5.9ms)
+Completed 200 OK in 533ms (Views: 527.3ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 23:00:49 +0000
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[36mCategory Load (2.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/profile/ads/shared/_form.html.erb (60.4ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (112.7ms)
+  [1m[35mMember Load (2.8ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (21.2ms)
+Completed 200 OK in 672ms (Views: 575.0ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 23:00:51 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[36mCategory Load (2.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/profile/ads/shared/_form.html.erb (10.2ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (63.7ms)
+  [1m[35mMember Load (2.3ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (6.5ms)
+Completed 200 OK in 555ms (Views: 550.4ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/site/profile/ads" for 10.0.2.2 at 2017-06-05 23:01:11 +0000
+Processing by Site::Profile::AdsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UvKdtm3bJZpiXNQe97jGN4CzSQRzQkPCvWhJwQpUpUa5b3FPDQp3EvMelQACyqX55O79Yzt8yMYIm7eON1jolA==", "ad"=>{"title"=>"jdfajshdgfjhasgd", "category_id"=>"5", "price"=>"33,21", "picture"=>#<ActionDispatch::Http::UploadedFile:0xe5b067c @tempfile=#<Tempfile:/tmp/RackMultipart20170605-2492-z5e3qv.jpg>, @original_filename="3d_cubes-1920x1080.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"ad[picture]\"; filename=\"3d_cubes-1920x1080.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"djhagdjhgahdgahgdhagdhagdagdadhahd"}, "commit"=>"Enviar"}
+Command :: file -b --mime '/tmp/a7ee31db57339282fe10c3d456bb152a20170605-2492-l6hauu.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/a7ee31db57339282fe10c3d456bb152a20170605-2492-9lvxco.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/a7ee31db57339282fe10c3d456bb152a20170605-2492-9lvxco.jpg[0]'
+Command :: convert '/tmp/a7ee31db57339282fe10c3d456bb152a20170605-2492-9lvxco.jpg[0]' -auto-orient -resize "320x" -crop "320x150+0+15" +repage '/tmp/47af0b627556ac4af17f81c91b20fc3420170605-2492-y2tz3p'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/a7ee31db57339282fe10c3d456bb152a20170605-2492-9lvxco.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/a7ee31db57339282fe10c3d456bb152a20170605-2492-9lvxco.jpg[0]'
+Command :: convert '/tmp/a7ee31db57339282fe10c3d456bb152a20170605-2492-9lvxco.jpg[0]' -auto-orient -resize "100x100>" '/tmp/47af0b627556ac4af17f81c91b20fc3420170605-2492-1ddxbvc'
+  [1m[36mMember Load (2.6ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+Command :: file -b --mime '/tmp/a7ee31db57339282fe10c3d456bb152a20170605-2492-10p3zh2.jpg'
+  [1m[36mSQL (10.4ms)[0m  [1mINSERT INTO "ads" ("title", "description", "category_id", "picture_file_name", "picture_content_type", "picture_file_size", "picture_updated_at", "price_cents", "member_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "jdfajshdgfjhasgd"], ["description", "djhagdjhgahdgahgdhagdhagdagdadhahd"], ["category_id", 5], ["picture_file_name", "3d_cubes-1920x1080.jpg"], ["picture_content_type", "image/jpeg"], ["picture_file_size", 260609], ["picture_updated_at", "2017-06-05 23:01:11.539044"], ["price_cents", 3321], ["member_id", 1], ["created_at", "2017-06-05 23:01:12.741404"], ["updated_at", "2017-06-05 23:01:12.741404"]]
+  [1m[35m (9.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/site/profile/ads
+Completed 302 Found in 1406ms (ActiveRecord: 22.6ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 23:01:12 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[36mMember Load (8.3ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAd Load (3.6ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1
+  [1m[36mCategory Load (2.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCategory Load (2.9ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (3.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (2.4ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (2.5ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCategory Load (2.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (71.1ms)
+  Rendered layouts/site_shared/_navigation.html.erb (1.2ms)
+Completed 200 OK in 536ms (Views: 503.4ms | ActiveRecord: 27.2ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 23:01:58 +0000
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[36mMember Load (3.3ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAd Load (4.9ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1  ORDER BY "ads"."created_at" DESC
+  [1m[36mCategory Load (2.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCategory Load (2.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (2.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCategory Load (2.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (2.9ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (107.0ms)
+  Rendered layouts/site_shared/_navigation.html.erb (1.6ms)
+Completed 200 OK in 689ms (Views: 573.1ms | ActiveRecord: 27.9ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 23:05:28 +0000
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[36mMember Load (3.0ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAd Load (4.8ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1  ORDER BY "ads"."created_at" DESC
+  [1m[36mCategory Load (2.4ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCategory Load (2.5ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCategory Load (2.6ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (2.3ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCategory Load (2.8ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (3.5ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (113.8ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.8ms)
+Completed 200 OK in 676ms (Views: 560.4ms | ActiveRecord: 30.1ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 23:05:30 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[36mCategory Load (2.9ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/profile/ads/shared/_form.html.erb (23.4ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (85.8ms)
+  [1m[35mMember Load (2.2ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (6.3ms)
+Completed 200 OK in 584ms (Views: 578.4ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/site/profile/ads" for 10.0.2.2 at 2017-06-05 23:05:34 +0000
+Processing by Site::Profile::AdsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e81tNKMctWKo6lH1AzG/o8XF6qO/JLFL6yjOlC4muLGQUIHNw83n6jmoEOv2Q9xtoZhexPcaOk9e2zDbEyr1Yw==", "ad"=>{"title"=>"", "category_id"=>"1", "price"=>"0,00", "description"=>""}, "commit"=>"Enviar"}
+  [1m[36mMember Load (2.9ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mCategory Load (3.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mCategory Load (2.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/profile/ads/shared/_form.html.erb (9.8ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (65.1ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.6ms)
+Completed 200 OK in 549ms (Views: 502.2ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 23:09:02 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[35mMember Load (2.4ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAd Load (2.7ms)[0m  [1mSELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1  ORDER BY "ads"."created_at" DESC[0m
+  [1m[35mCategory Load (2.5ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCategory Load (2.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCategory Load (2.5ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (2.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCategory Load (2.3ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (3.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (45.2ms)
+  Rendered layouts/site_shared/_navigation.html.erb (1.4ms)
+Completed 200 OK in 5787ms (Views: 5761.4ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/assets/notifyjs/notify.self-580979233c906abe103d95ccdbfe97994e5a03d69946ab5b2f74dc3a667fde52.js?body=1" for 10.0.2.2 at 2017-06-05 23:09:08 +0000
+
+
+Started GET "/assets/notifyjs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 10.0.2.2 at 2017-06-05 23:09:08 +0000
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 10.0.2.2 at 2017-06-05 23:09:08 +0000
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-05 23:09:10 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[35mCategory Load (2.5ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/profile/ads/shared/_form.html.erb (11.4ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (64.3ms)
+  [1m[36mMember Load (2.2ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (5.7ms)
+Completed 200 OK in 544ms (Views: 538.6ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/site/profile/ads" for 10.0.2.2 at 2017-06-05 23:09:21 +0000
+Processing by Site::Profile::AdsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7cMbJu6IfkMmJ5p9Tqfp7cW7nkpo+tfJurl/yJRTQt4GXvffjlksy7dl22O71YojoeYqLSDEXM0PSoGHqV8PDA==", "ad"=>{"title"=>"fdsfdf", "category_id"=>"1", "price"=>"11", "description"=>"1111"}, "commit"=>"Enviar"}
+  [1m[35mMember Load (2.3ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCategory Load (2.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35mCategory Load (2.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/profile/ads/shared/_form.html.erb (9.7ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (61.2ms)
+  Rendered layouts/site_shared/_navigation.html.erb (1.2ms)
+Completed 200 OK in 555ms (Views: 534.4ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/site/profile/ads" for 10.0.2.2 at 2017-06-05 23:09:28 +0000
+Processing by Site::Profile::AdsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IF9j9UK32vAYYHRNbKRcDcpTdFJjFoLw/u6KOxDTBnPLwo8MImaIeIkiNVOZ1j/Drg7ANSsoCfRLHXR0Ld9LoQ==", "ad"=>{"title"=>"fdsfdf", "category_id"=>"1", "price"=>"11,00", "picture"=>#<ActionDispatch::Http::UploadedFile:0xdefed88 @tempfile=#<Tempfile:/tmp/RackMultipart20170605-2492-1jq4jw1.jpg>, @original_filename="aldeyjarfoss_waterfall_iceland_winter-wallpaper-1920x1080.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"ad[picture]\"; filename=\"aldeyjarfoss_waterfall_iceland_winter-wallpaper-1920x1080.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"1111"}, "commit"=>"Enviar"}
+Command :: file -b --mime '/tmp/ce3bae5e00cb7c195b36b366db0d27af20170605-2492-1660qnd.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/ce3bae5e00cb7c195b36b366db0d27af20170605-2492-1pcmfgc.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/ce3bae5e00cb7c195b36b366db0d27af20170605-2492-1pcmfgc.jpg[0]'
+Command :: convert '/tmp/ce3bae5e00cb7c195b36b366db0d27af20170605-2492-1pcmfgc.jpg[0]' -auto-orient -resize "320x" -crop "320x150+0+15" +repage '/tmp/c632556f2054585f48063c6a1ba405c520170605-2492-1oom4iv'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/ce3bae5e00cb7c195b36b366db0d27af20170605-2492-1pcmfgc.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/ce3bae5e00cb7c195b36b366db0d27af20170605-2492-1pcmfgc.jpg[0]'
+Command :: convert '/tmp/ce3bae5e00cb7c195b36b366db0d27af20170605-2492-1pcmfgc.jpg[0]' -auto-orient -resize "100x100>" '/tmp/c632556f2054585f48063c6a1ba405c520170605-2492-w03r0n'
+  [1m[36mMember Load (2.6ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCategory Load (3.4ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+Command :: file -b --mime '/tmp/ce3bae5e00cb7c195b36b366db0d27af20170605-2492-toq8es.jpg'
+  [1m[35mSQL (5.8ms)[0m  INSERT INTO "ads" ("title", "description", "category_id", "picture_file_name", "picture_content_type", "picture_file_size", "picture_updated_at", "price_cents", "member_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["title", "fdsfdf"], ["description", "1111"], ["category_id", 1], ["picture_file_name", "aldeyjarfoss_waterfall_iceland_winter-wallpaper-1920x1080.jpg"], ["picture_content_type", "image/jpeg"], ["picture_file_size", 980794], ["picture_updated_at", "2017-06-05 23:09:28.564827"], ["price_cents", 1100], ["member_id", 1], ["created_at", "2017-06-05 23:09:29.777463"], ["updated_at", "2017-06-05 23:09:29.777463"]]
+  [1m[36m (12.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/site/profile/ads
+Completed 302 Found in 1450ms (ActiveRecord: 24.3ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 23:09:30 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[35mMember Load (7.8ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAd Load (2.4ms)[0m  [1mSELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1  ORDER BY "ads"."created_at" DESC[0m
+  [1m[35mCategory Load (2.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (2.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCategory Load (2.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCategory Load (2.6ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (3.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (48.3ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.7ms)
+Completed 200 OK in 546ms (Views: 517.1ms | ActiveRecord: 24.5ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-05 23:09:52 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[36mMember Load (2.3ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAd Load (2.9ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1  ORDER BY "ads"."created_at" DESC
+  [1m[36mCategory Load (2.9ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCategory Load (2.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCategory Load (2.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (3.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (2.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (51.2ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.6ms)
+Completed 200 OK in 526ms (Views: 501.2ms | ActiveRecord: 19.9ms)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+  [1m[36mMember Load (3.7ms)[0m  [1mSELECT  "members".* FROM "members"  ORDER BY "members"."id" DESC LIMIT 1[0m
+  [1m[35mAd Load (5.0ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."member_id" = ?  [["member_id", 101]]
