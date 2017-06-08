@@ -3,7 +3,8 @@ class Ad < ActiveRecord::Base
   belongs_to :member
 
   #Validates
-  validates_presence_of :title,:description, :category, :price, :picture
+  validates :title,:description, :category, :price, :picture, :finish_date, presence:true
+  validates :price, numericality: {greater_than: 0}
 
   # paperclip config
   has_attached_file :picture, styles: { medium: "320x150#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"

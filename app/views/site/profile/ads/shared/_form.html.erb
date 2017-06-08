@@ -23,13 +23,19 @@
     </div>
   </div>
   <div class="row">
-    <div class="form-group col-xs-2">
+    <div class="form-group col-xs-3">
       <label><%= f.label :price %></label>
       <div class="input-group">
         <div class="input-group-addon"><%= @ad.price.currency.symbol %></div>
           <%= f.text_field :price, class: "form-control" %>
         </div>
       </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-xs-3">
+      <label><%= f.label :finish_date %></label>
+      <%= f.date_field :finish_date, class: "form-control" %>
+    </div>
   </div>
   <div class="row">
     <div class="form-group col-xs-7">

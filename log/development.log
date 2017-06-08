@@ -12985,3 +12985,323 @@ Completed 200 OK in 526ms (Views: 501.2ms | ActiveRecord: 19.9ms)
 DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
   [1m[36mMember Load (3.7ms)[0m  [1mSELECT  "members".* FROM "members"  ORDER BY "members"."id" DESC LIMIT 1[0m
   [1m[35mAd Load (5.0ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."member_id" = ?  [["member_id", 101]]
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddFinishDateToAd (20170607215016)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (8.9ms)[0m  [1mALTER TABLE "ads" ADD "finish_date" date[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20170607215016"]]
+  [1m[36m (11.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (2.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (2.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_admins_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_admins_on_email' AND type='index'
+
+  [1m[36m (2.6ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ads_on_member_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ads_on_member_id' AND type='index'
+[0m
+  [1m[35m (2.5ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_ads_on_category_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_ads_on_category_id' AND type='index'
+
+  [1m[36m (2.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_members_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_members_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (2.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_members_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_members_on_email' AND type='index'
+
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+
+
+Started GET "/" for 10.0.2.2 at 2017-06-07 21:53:47 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Site::HomeController#index as HTML
+  [1m[35mCategory Load (3.1ms)[0m  SELECT "categories".* FROM "categories"  ORDER BY "categories"."description" ASC
+  [1m[36mAd Load (33.1ms)[0m  [1mSELECT  "ads".* FROM "ads"  ORDER BY "ads"."created_at" DESC LIMIT 6[0m
+  Rendered site/home/index.html.erb within layouts/site (1943.4ms)
+  [1m[35mMember Load (3.0ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (115.4ms)
+  Rendered layouts/site_shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 13548ms (Views: 13368.0ms | ActiveRecord: 42.5ms)
+
+
+Started GET "/" for 10.0.2.2 at 2017-06-07 21:54:01 +0000
+Processing by Site::HomeController#index as HTML
+  [1m[36mCategory Load (4.2ms)[0m  [1mSELECT "categories".* FROM "categories"  ORDER BY "categories"."description" ASC[0m
+  [1m[35mAd Load (3.4ms)[0m  SELECT  "ads".* FROM "ads"  ORDER BY "ads"."created_at" DESC LIMIT 6
+  Rendered site/home/index.html.erb within layouts/site (19.2ms)
+  [1m[36mMember Load (2.3ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (11.4ms)
+  Rendered layouts/site_shared/_footer.html.erb (0.3ms)
+Completed 200 OK in 515ms (Views: 504.5ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/assets/notifyjs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for 10.0.2.2 at 2017-06-07 21:54:02 +0000
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for 10.0.2.2 at 2017-06-07 21:54:02 +0000
+
+
+Started GET "/site/profile/dashboard" for 10.0.2.2 at 2017-06-07 21:54:04 +0000
+Processing by Site::Profile::DashboardController#index as HTML
+  Rendered site/profile/dashboard/index.html.erb within layouts/profile (0.7ms)
+  [1m[35mMember Load (2.5ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (8.9ms)
+Completed 200 OK in 667ms (Views: 664.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-07 21:54:08 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[36mMember Load (2.6ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAd Load (3.0ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1  ORDER BY "ads"."created_at" DESC
+  [1m[36mCategory Load (2.4ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (2.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCategory Load (2.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCategory Load (2.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (2.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (2.9ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (171.4ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.7ms)
+Completed 200 OK in 696ms (Views: 672.4ms | ActiveRecord: 19.4ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-07 21:54:13 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[35mCategory Load (2.4ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/profile/ads/shared/_form.html.erb (213.6ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (271.8ms)
+  [1m[36mMember Load (2.2ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (5.7ms)
+Completed 200 OK in 749ms (Views: 743.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-07 21:54:53 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[35mCategory Load (2.9ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/profile/ads/shared/_form.html.erb (15.7ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (75.3ms)
+  [1m[36mMember Load (2.3ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (5.7ms)
+Completed 200 OK in 595ms (Views: 588.5ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-07 21:55:02 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[35mCategory Load (4.0ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/profile/ads/shared/_form.html.erb (17.0ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (78.4ms)
+  [1m[36mMember Load (2.7ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (6.5ms)
+Completed 200 OK in 613ms (Views: 605.7ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-07 21:55:19 +0000
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[35mCategory Load (3.0ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/profile/ads/shared/_form.html.erb (15.2ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (77.1ms)
+  [1m[36mMember Load (2.7ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (7.0ms)
+Completed 200 OK in 616ms (Views: 609.3ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-07 21:59:47 +0000
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[35mCategory Load (2.8ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/profile/ads/shared/_form.html.erb (65.6ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (122.3ms)
+  [1m[36mMember Load (3.2ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (21.3ms)
+Completed 200 OK in 737ms (Views: 633.6ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-07 21:59:49 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[35mMember Load (2.1ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mAd Load (4.5ms)[0m  [1mSELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1  ORDER BY "ads"."created_at" DESC[0m
+  [1m[35mCategory Load (2.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (2.8ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mCategory Load (2.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCategory Load (2.4ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (70.0ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.6ms)
+Completed 200 OK in 553ms (Views: 529.1ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/site/profile/ads/109/edit" for 10.0.2.2 at 2017-06-07 21:59:51 +0000
+Processing by Site::Profile::AdsController#edit as HTML
+  Parameters: {"id"=>"109"}
+  [1m[36mAd Load (2.2ms)[0m  [1mSELECT  "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1[0m  [["id", 109]]
+  [1m[35mCategory Load (2.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/profile/ads/shared/_form.html.erb (9.8ms)
+  Rendered site/profile/ads/edit.html.erb within layouts/profile (62.6ms)
+  [1m[36mMember Load (2.2ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (5.9ms)
+Completed 200 OK in 567ms (Views: 557.7ms | ActiveRecord: 6.7ms)
+
+
+Started PATCH "/site/profile/ads/109" for 10.0.2.2 at 2017-06-07 21:59:59 +0000
+Processing by Site::Profile::AdsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z3VAM4tOzoEUtMGVJitpMDqMJjcOTmHzc6+jEZlZ2JaM6KzK65+cCYX2gIvTWQr+XtGSUEZw6vfGXF1epFWVRA==", "ad"=>{"title"=>"fdsfdf", "category_id"=>"1", "price"=>"11,00", "finish_date"=>"2017-06-14", "description"=>"1111"}, "commit"=>"Enviar", "id"=>"109"}
+  [1m[35mAd Load (2.4ms)[0m  SELECT  "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1  [["id", 109]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (4.2ms)[0m  [1mUPDATE "ads" SET "finish_date" = ?, "updated_at" = ? WHERE "ads"."id" = ?[0m  [["finish_date", "2017-06-14"], ["updated_at", "2017-06-07 21:59:59.915733"], ["id", 109]]
+  [1m[35m (12.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/site/profile/ads
+Completed 302 Found in 43ms (ActiveRecord: 21.4ms)
+
+
+Started GET "/site/profile/ads" for 10.0.2.2 at 2017-06-07 21:59:59 +0000
+Processing by Site::Profile::AdsController#index as HTML
+  [1m[36mMember Load (7.3ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mAd Load (2.4ms)[0m  SELECT "ads".* FROM "ads" WHERE "ads"."member_id" = 1  ORDER BY "ads"."created_at" DESC
+  [1m[36mCategory Load (2.4ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCategory Load (2.4ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCategory Load (2.1ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mCategory Load (2.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (2.2ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCategory Load (2.4ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered site/profile/ads/index.html.erb within layouts/profile (45.9ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.6ms)
+Completed 200 OK in 524ms (Views: 496.9ms | ActiveRecord: 23.4ms)
+
+
+Started GET "/site/profile/ads/109/edit" for 10.0.2.2 at 2017-06-07 22:00:02 +0000
+Processing by Site::Profile::AdsController#edit as HTML
+  Parameters: {"id"=>"109"}
+  [1m[35mAd Load (2.5ms)[0m  SELECT  "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT 1  [["id", 109]]
+  [1m[36mCategory Load (2.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/profile/ads/shared/_form.html.erb (11.5ms)
+  Rendered site/profile/ads/edit.html.erb within layouts/profile (65.7ms)
+  [1m[35mMember Load (2.1ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (5.0ms)
+Completed 200 OK in 574ms (Views: 564.2ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/site/profile/ads/new" for 10.0.2.2 at 2017-06-07 22:03:48 +0000
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+Processing by Site::Profile::AdsController#new as HTML
+  [1m[36mCategory Load (2.6ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/profile/ads/shared/_form.html.erb (61.7ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (119.3ms)
+  [1m[35mMember Load (2.5ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered layouts/site_shared/_navigation.html.erb (17.0ms)
+Completed 200 OK in 712ms (Views: 612.5ms | ActiveRecord: 11.6ms)
+
+
+Started POST "/site/profile/ads" for 10.0.2.2 at 2017-06-07 22:04:00 +0000
+Processing by Site::Profile::AdsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N7EzSmbgCZ73j2Q0pdRlJccf5bQVzpdTHL04Z+bpaKDcLN+zBjFbFmbNJSpQpgbro0JR013wHFepTsYo2+Ulcg==", "ad"=>{"title"=>"fgdgdgf", "category_id"=>"1", "price"=>"44", "finish_date"=>"", "description"=>"4444"}, "commit"=>"Enviar"}
+  [1m[36mMember Load (2.4ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCategory Load (2.9ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mCategory Load (2.8ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/profile/ads/shared/_form.html.erb (11.1ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (64.6ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.6ms)
+Completed 200 OK in 621ms (Views: 554.5ms | ActiveRecord: 8.3ms)
+
+
+Started POST "/site/profile/ads" for 10.0.2.2 at 2017-06-07 22:07:15 +0000
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+Processing by Site::Profile::AdsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MGVxUoiItsgbGNcPqgoSA3HBm/d2qfZYT4Y0BKrVnO/b+J2r6FnkQIpalhFfeHHNFZwvkD6XfVz6dcpLl9nRPQ==", "ad"=>{"title"=>"fgdgdgf", "category_id"=>"1", "price"=>"0", "finish_date"=>"", "description"=>"4444"}, "commit"=>"Enviar"}
+  [1m[35mMember Load (2.8ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCategory Load (2.6ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mCategory Load (2.3ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/profile/ads/shared/_form.html.erb (8.6ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (63.0ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.8ms)
+Completed 200 OK in 724ms (Views: 527.7ms | ActiveRecord: 13.8ms)
+
+
+Started POST "/site/profile/ads" for 10.0.2.2 at 2017-06-07 22:07:49 +0000
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+Processing by Site::Profile::AdsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MGVxUoiItsgbGNcPqgoSA3HBm/d2qfZYT4Y0BKrVnO/b+J2r6FnkQIpalhFfeHHNFZwvkD6XfVz6dcpLl9nRPQ==", "ad"=>{"title"=>"fgdgdgf", "category_id"=>"1", "price"=>"0", "finish_date"=>"", "description"=>"4444"}, "commit"=>"Enviar"}
+  [1m[36mMember Load (3.4ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCategory Load (2.3ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mCategory Load (2.5ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/profile/ads/shared/_form.html.erb (9.8ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (62.4ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.7ms)
+Completed 200 OK in 2045ms (Views: 534.4ms | ActiveRecord: 14.2ms)
+
+
+Started POST "/site/profile/ads" for 10.0.2.2 at 2017-06-07 22:07:56 +0000
+Processing by Site::Profile::AdsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/u8k2t2Ij+S4qHyQRsxEa+khVe+gGkjqDHV/iq0JczAVcsgjvVndbCnqPY6zvieljXzhiOgkw+65hoHFkAU+4g==", "ad"=>{"title"=>"fgdgdgf", "category_id"=>"1", "price"=>"0,00", "finish_date"=>"", "description"=>"4444"}, "commit"=>"Enviar"}
+  [1m[35mMember Load (2.7ms)[0m  SELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCategory Load (2.2ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35mCategory Load (2.7ms)[0m  SELECT "categories".* FROM "categories"
+  Rendered site/profile/ads/shared/_form.html.erb (10.1ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (65.5ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.7ms)
+Completed 200 OK in 559ms (Views: 536.5ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/site/profile/ads" for 10.0.2.2 at 2017-06-07 22:08:23 +0000
+DEPRECATION WARNING: Defining a route where `to` is a controller without an action is deprecated. Please change `to: 'home/index'` to `controller: 'home/index'`. (called from block (2 levels) in <top (required)> at /vagrant/escamboapp/config/routes.rb:13)
+Processing by Site::Profile::AdsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/u8k2t2Ij+S4qHyQRsxEa+khVe+gGkjqDHV/iq0JczAVcsgjvVndbCnqPY6zvieljXzhiOgkw+65hoHFkAU+4g==", "ad"=>{"title"=>"fgdgdgf", "category_id"=>"1", "price"=>"0,00", "finish_date"=>"", "description"=>"4444"}, "commit"=>"Enviar"}
+  [1m[36mMember Load (2.6ms)[0m  [1mSELECT  "members".* FROM "members" WHERE "members"."id" = ?  ORDER BY "members"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCategory Load (2.9ms)[0m  [1mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mCategory Load (2.3ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered site/profile/ads/shared/_form.html.erb (9.0ms)
+  Rendered site/profile/ads/new.html.erb within layouts/profile (61.0ms)
+  Rendered layouts/site_shared/_navigation.html.erb (0.9ms)
+Completed 200 OK in 2123ms (Views: 534.6ms | ActiveRecord: 13.9ms)
