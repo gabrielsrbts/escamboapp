@@ -1,3 +1,7 @@
+<%= content_for :javascripts do %>
+  <%= javascript_include_tag 'site/profile/ads' %>
+<% end %>
+
 <% if @ad.errors.any? %>
   <div class="alert alert-danger alert-dismissable">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -31,12 +35,15 @@
         </div>
       </div>
   </div>
+
   <div class="row">
-    <div class="form-group col-xs-3">
+    <div class="form-group col-xs-2">
       <label><%= f.label :finish_date %></label>
-      <%= f.date_field :finish_date, class: "form-control" %>
+      <%= f.text_field :finish_date, class: "datepicker form-control", 
+                        value: (l(@ad.finish_date) unless @ad.finish_date.blank?)%>
     </div>
   </div>
+
   <div class="row">
     <div class="form-group col-xs-7">
       <%= f.label :picture %><br>
