@@ -25,6 +25,8 @@ gem 'money-rails', '~>1'
 gem 'paperclip', '~> 5.0.0'
 # jQuery UI for the Rails asset pipeline
 gem 'jquery-ui-rails'
+# Animate.css
+gem 'rails-assets-animate.css'
 
 
 source 'https://rails-assets.org' do

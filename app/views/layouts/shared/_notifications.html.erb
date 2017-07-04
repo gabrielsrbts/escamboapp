@@ -1,10 +1,28 @@
 <% if notice %>
-  <%= javascript_tag "$.notify('#{notice}', {className: 'success', globalPosition: 'top center'})" %>
+  <%= javascript_tag "$.notify({ 
+                                  message: '#{notice}',
+                                }, {
+                      	          type: 'success', 
+                      	          placement: {from: 'top', 
+                      	          	          align: 'center'},
+                      	          animate: {
+		                                     enter: 'animated fadeInDown',
+		                                     exit: 'animated fadeOutUp'
+	                                       },
+                      	          delay: 5000,
+                      	          timer: 1000
+                      	        });" %>
 <% end %>
 
 <% if alert %>
-  <script>
-    $.notify("<%= alert %>", {className: "error", globalPosition: "top center"});
-  </script>
+  <%= javascript_tag "$.notify({ 
+                                  message: '#{alert}',
+                                }, {
+                      	          type: 'danger',
+                      	          placement: {from: 'top', 
+                      	          	          align: 'center'}, 
+                      	          delay: 5000,
+                      	          timer: 1000
+                      	        });" %>
 <% end %>
 
